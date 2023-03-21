@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} 404 {% endblock %}
+{% block content %}
+
+<main>
+    <div class="row justify-content-center my-4">
+        <div class="col-md-7 mt-4">
+            <h1 >404 😢</h1>
+            <p>Make sure you are connected to the internet or your query is correct.</p>
+            <p>Sorry about that.</p>
+                    <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+                    <a href="mailto:zenoftech.info@gmail.com" class="btn btn-success">Contact Support</a>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

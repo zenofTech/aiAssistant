@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} ESTAM Uni {% endblock %}
+{% block content %}
+<div class="row justify-content-center my-4">
+    <div class="col-md-10 mt-4">
+        <div class="card bg-dark">
+            <h1 class="card-header text-center text-primary">A.I ASSISTANT <br />  <a href="https://a-muktar.github.io/muktar" style="font-size: 17px; text-decoration: none; " >&copy; 2023 Zenoftech</a></h1>
+            <div class="card-body">
+             <p class=" text-white text-center">Hello, I'm your <span class="text-primary ">studying assistant</span> here to help you, what do you need assistance with?</p>
+              <form action="." method="POST">
+                <!-- this secures the form from malicious attacks during submission -->
+                {% csrf_token %}
+                <input class="form-control mb-2" required type="text" autofocus="autofocus" name="prompt" value="{{ prompt }}" id="">
+                <button class="btn btn-success fw-bold" type="submit">
+                     GENERATE
+                </button>
+              </form>
+              <hr>
+              <code class="text-white bg-gray">
+                {{ response }}      
+              </code>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
